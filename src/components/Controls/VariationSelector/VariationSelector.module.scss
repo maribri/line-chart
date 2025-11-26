@@ -1,0 +1,117 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.selector {
+  position: relative;
+  min-width: 160px;
+
+  &__control {
+    @include button-reset;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-xxs $spacing-sm;
+    border: 1px solid var(--color-button-border);
+    border-radius: $border-radius-sm;
+    background: var(--color-button-bg);
+    color: var(--color-button-text);
+    cursor: pointer;
+    @include theme-transition(background border-color color);
+    @include focus-visible;
+
+    &:hover {
+      background: var(--color-button-hover);
+      border-color: var(--color-border-hover);
+    }
+  }
+
+  &__value {
+    font-size: $font-size-base;
+    text-align: left;
+  }
+
+  &__chevron {
+    width: 12px;
+    height: 12px;
+    color: var(--color-text-secondary);
+    transition: transform 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+    
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + $spacing-xxs);
+    left: 0;
+    width: 100%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: $border-radius-sm;
+    padding: $spacing-sm;
+    box-shadow: 0 16px 35px rgba(10, 14, 39, 0.18);
+    z-index: 10;
+  }
+
+  &__options {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include flex-column;
+    gap: $spacing-xxs;
+  }
+
+  &__option {
+    @include button-reset;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm;
+    border-radius: $border-radius-sm;
+    color: var(--color-text-primary);
+    background: transparent;
+    cursor: pointer;
+    @include theme-transition(background color);
+
+    &:hover:not(:disabled) {
+      background: var(--color-button-hover);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    &--selected {
+      background: var(--color-button-active);
+    }
+
+    &--action {
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      justify-content: space-between;
+      border-bottom: 1px solid var(--color-border);
+      border-radius: 0;
+      margin-bottom: $spacing-sm;
+      padding-bottom: $spacing-sm;
+    }
+  }
+
+  &__swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--color-border);
+  }
+
+  &__name {
+    flex: 1;
+    text-align: left;
+  }
+}

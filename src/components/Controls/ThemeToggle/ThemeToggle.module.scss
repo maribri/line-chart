@@ -1,0 +1,8 @@
+@use '../../../styles/variables' as *;
+
+.toggle {
+  &__button {
+    font-size: $font-size-lg;
+  }
+}
+

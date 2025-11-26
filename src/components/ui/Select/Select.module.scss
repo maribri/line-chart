@@ -1,0 +1,51 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.select {
+  @include flex-column;
+  gap: $spacing-sm;
+
+  &__control-wrapper {
+    position: relative;
+  }
+
+  &__control {
+    width: 100%;
+    padding: $spacing-xs $spacing-lg $spacing-xs $spacing-sm;
+    background: var(--color-button-bg);
+    border: 1px solid var(--color-button-border);
+    border-radius: $border-radius-sm;
+    color: var(--color-button-text);
+    font-size: $font-size-base;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @include theme-transition(background-color border-color color);
+    @include focus-visible;
+
+    &:hover {
+      background: var(--color-button-hover);
+      border-color: var(--color-border-hover);
+    }
+  }
+
+  &__chevron {
+    position: absolute;
+    top: 50%;
+    right: $spacing-md;
+    width: 12px;
+    height: 12px;
+    color: var(--color-text-secondary);
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: color 0.2s ease;
+    
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+

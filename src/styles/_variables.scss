@@ -1,0 +1,86 @@
+/**
+ * - CSS Custom Properties are for dynamic values (colors, transitions)
+ * - SCSS Variables are for static constants (spacing, breakpoints, z-index)
+ */
+
+:root {
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-text-primary: #1B1B23;
+  --color-text-secondary: #52515B;
+  --color-border: #E1DFE7;
+  --color-border-hover: #adb5bd;
+  --color-error: #d32f2f;
+  
+  --color-original: #46464f;
+  --color-variation-a: #4142ef;
+  --color-variation-b: #ff8346;
+  --color-variation-c: #35bdad;
+  
+  --color-grid: #e9ecef;
+  --color-axis-line: #E1DFE7;
+  --color-axis-text: #918F9A;
+  --color-crosshair: #495057;
+  
+  --color-button-bg: #ffffff;
+  --color-button-border: #c7c5d0;
+  --color-button-hover: #f8f9fa;
+  --color-button-active: #e9ecef;
+  --color-button-text: var(--color-text-primary);
+  
+  --color-tooltip-bg: #ffffff;
+  --color-tooltip-border: #dee2e6;
+  --color-tooltip-shadow: rgba(0, 0, 0, 0.15);
+  
+  --transition-duration: 300ms;
+  --transition-theme: 200ms;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --color-background: #000027;
+  --color-surface: #151b3d;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a8b2d1;
+  --color-border: #414163;
+  --color-border-hover: #2a3354;
+
+  --color-original: #c7c5d0;
+  
+  --color-grid: #1a1f3a;
+  --color-axis-line: #414163;
+  --color-crosshair: #ffffff;
+  
+  --color-button-bg: #151b3d;
+  --color-button-border: #1a1f3a;
+  --color-button-hover: #1a1f3a;
+  --color-button-active: #2a3354;
+  --color-button-text: #ffffff;
+  
+  --color-tooltip-bg: #151b3d;
+  --color-tooltip-border: #2a3354;
+  --color-tooltip-shadow: rgba(0, 0, 0, 0.5);
+}
+
+$breakpoint-mobile: 671px;
+$breakpoint-max: 1300px;
+
+$spacing-xxs: 4px;
+$spacing-xs: 6px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+$font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+$font-size-sm: 11px;
+$font-size-base: 12px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+
+$z-index-base: 1;
+$z-index-tooltip: 500;
+
