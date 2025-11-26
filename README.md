@@ -1,5 +1,7 @@
 # Test Assignment: Interactive Line Chart
 
+## [**Live Demo**](https://maribri.github.io/line-chart/)
+
 ## Tech Stack:
 - React 19 + TS
 - Vite 7
